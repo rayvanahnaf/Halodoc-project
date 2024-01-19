@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halodoc</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="shortcut icon"
+        href="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoGBxMSEBMQEhIXEBEWExERERESERIQDxoQFhMXFxYWFhkZICoiGRwnKRgWIzQjKysuMTEzGCFDOzYvOiowMi4BCwsLDw4PHBERHC4nICcwMDAwMDAwMDIwMTAwLjAwMDAyMC4xOjAwMDAwMDAwMDAuMDAwMDAwMDAwMDAwMDAwOP/AABEIAOEA4QMBIgACEQEDEQH/xAAcAAEAAgIDAQAAAAAAAAAAAAAABgcBBQIECAP/xABGEAACAQIBCAQIDAUDBQAAAAAAAQIDEQQFBgcSITFRcSJBYYETIzJCcpGhsRQ0NVJTYnOCk7KzwRczdNHwJJLhFSVjosP/xAAaAQEAAgMBAAAAAAAAAAAAAAAAAgYBBAUD/8QAOhEAAgECAwQHBAcJAAAAAAAAAAECAxEEBRIhMUFRBmFxgZGxwRMUodEyNFJTcpLwFSIjM0KCosLh/9oADAMBAAIRAxEAPwC5gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD4YrERpwlUlsjCMpya2vVirvZ3AH3BFnpEwPz5/hSH8RMD9JP8KQNv3DF/dT/K/kSkEWhpCwLaSqSu2kvFS3t2JQmDxq0KtK3tIuN+aaMgGvy1lilhafhazajrKGyLk9Z3tsXJghGMpyUYq7fA2AIt/ETA/ST/AApD+ImB+kn+FIGz7hivup/lZKQaHJWeGFxNVUaUpSm1JpOnJKyV3tN8DwqUqlJ6akWn1q3mAADzAAAABhsAyCNZYz6weHbjrutNOzjRSkk+2Taj7TULSlRv/Jnq3368Na3L/kxdG7Ty7FVI6o03bw8yeAjmRs98JiWoKbpTe6FVKDb4JpuL9ZIrmTWq0alKWmpFp9ZkAA8wAAAAAAAAAdDL/wAUxP2Fb9NnfOhl/wCKYn7Ct+mwydP6a7ShZb3zZzWHlv1W1xSdjj533v3LwzRX+gwv2FLq+qiCVy95nj/c4qWm93bfYpfB4aXhIdF+VHqfFF/LqGouHsMkkrFTzHMXjHF6dNr8b7+5GSIaVYt4BWV34aGxK78iZLzi1cyaeGrexrRq2vpd7Hnz4NP5r9UzhKDW9PvTR6G1VwKz0xWVeh9jL8zINWLXgc596rKk4Wvfbe+5X5Gs0X/KNP0K36ZcCKf0X/KNP0a36ZcCJI5Of/Wl+FebMgAycQAAAxcrHSFng5zlhKEmqabjVnF2lKSupJNeYtz48t85zqyh8HwdasnZxg1B/wDkl0Y+1ooyTu+bIyLDkOCjVk601fTsS6+fd59hyjByaUbzb2JRTbb4JI2bzWxijrfBaur9lPX9X/BZeYubMMNQhUlFOvOKlKTV3FPaoLhbZfi7knsNJsYnpBpqONGKaXF329luHK/geeZpxbTvFrY01Zp8GmWBo7zwk5RwleV1Lo0akneSl1Qk+tPqfdwNxn/mvCvRniILVrwi5XSs5QW1xfF77P8AuVRTm4yUk7NSTbW9NbU0Y3G7TnRzbDNNWa/xfBp8vDZfkehkZNfkDG+HwtGs/KnThKVt2vbpL13NgTKVKLi3F71sAABgAAAAAAHSy1TcsNXit7o1UubptHdOEo3VntT2MGU7NM89Lf3/ALl3ZlVFLJ+Ft1UoR747H7im8s4J0a9Wi/MnUh3KWx96syxdE2U1LDzwzfSpyc4rjTla/qd/WiMS4Z9H2uFVWO1Jp9zW/wAicgwZJFOAAABV2mCqniqUVvjRu/vSlb3FnTkkm3sS2t9VikM8Mq/CcZVqp3hrKMPQitWLXOzl94xI7mQUnLE6+EU/jsXq+42miynfKEXwp1JPlqpfuW6iu9D+Tv5+Ja2PVoxfb5UvfAsULceWeVFPGNLgkvX1AAMnIAAAIzpJpuWTa1urwcnyU1cp6jK0k966La7Ey/coYONalUoy8mcJQfKStcorKuBnh606M9k4zcex8Gux71zIyLX0drRdKdLinfuaSf66y+MLWU4RnF3jKMZRf1Wro+5VeZOfHweKw+IUpUlfUmulUjd31WuuO/tRNHnrgVHW+ER5KM9f1WuZucTFZZiKFRx0trg0m013ceZtMsV408PWnJ2jGlUlJ9iiyg3/AH95L8989nio+Aopwo3vJy2VJtPZs82PXbe+wjuQsmTxOIp0YLbJpN/NV9snyRh7Sx5PhZYSjOdbZfa+pK+/rLdzEg45Pw6fXFyXKU5Ne9G+PhhKEadOFKKtGEYwivqxVl7j7kioVqntKkp8234sAAHmAAAAAADDMgArPStkRxqwxcF0Z2hVst00nZvmtn3VxIlm/leeFrwrw83Y1eycX5UXz96Rd2UcDCvSnSqLWhKLjJdnFPqfaU5nVmzVwVWzTlSb8XVt0ZLg+E+z1EWrFsyfGQr0fda29Kyv/VHl2rx3W3Fu5EyxSxdJVaLuvOi7a8ZdcZLqZsCgcm5TrYeevRnKnL6r2NcJJ+UuxpkvwGlGsklVowqfWi3SfetqM6jSxWQVoSbofvR5N2fx39vkWgcbleV9KuzoYXb9apdeyJHMuZ7YrEpxc/B0nvhSTpprhJ+U/XbsFzwo5Hi5u0korm2n8Fdkk0g55RcZYTDy1nK8a1SL6KjtvTi+u+5vmuUAweGnVqQpwjrylNQjFcX+3W+RwoUZVJKMU5Sk7RUU5Sb4JItXMPNFYSPh6yTxElZLeqcH1LjJ9b7l243s7tSdDKcNpjtk9198nzfUv+I3+b+So4XDU6EduqulLjUe2Uu93NkYRkkUyUnOTlJ3b2sAAEQAAARnO/NKnjY6yfg68VaM/Ncfmz4rt3okxgHrRrTozVSm7Nfrw5lE5XzdxGGbjVpNR6parlB9qktn7mt2/wCJnoeUU9jWw6//AE+le/goX4+Djf12I6SwU+kbStOnd9Tt8LOxSuRs28TiZJU6UtXrnJOMF2uT3912WnmlmtSwUH59aS6dS3Vv1Yrqj7yQWMmUrHOx2bVsUtH0Y8lx7X6KyAAMnLAAAAAAAAAAAAB18XhYVYSp1IKcJK0oyScWjsABO21EAy1oyhJ6+GqeDd76lTpR5RktqXO5Dsv5q4jBpSqpajerGcZqcXKzdup9T6i77EK0vfFKX23/AM5EZIsGWZriZ1oUZy1Jvitu7mVZ2E0ydoyxEmnWqQorZdKTqS9SsvaQv/PaeiAlc6ec46thYw9k0tV+F91ufaaPN3NXD4NJ0461S1nVnZz5Lqiuxe03ljIJFPqVZ1ZOc223xYAAIAAAAAAAAAHRytlOnhqTrVpalNOKbUZSd5NJbEr72af+IOA+mf4NX+xx0nfJtX0qX50U/DeuaMNlgyrKqOLo66jlfVbY1yXNPmX/AIHFwrU4Vab1oTjGcHZq8ZK6dnuOyavNX4jhP6eh+mjaGTg1I6ZtcmAACIAAAAAAAAAAAAAAAITpd+K0vtn+nImxCdLvxWl9s/05EZbjoZV9cp9voVZ/ntPQ554/z2nogI6/STdS/u/1MgAkVgAAAAAAAAAAAAi+k75Nq+nS/Oin4b1zRcGk75Nq+nS/Oin4b1zRFlz6PfVn+N+US9M1fiOE/p6H6aNoavNX4jhP6eh+mjaGVuKhW/mS7X5gAGTzAAAAAAAAAAAAAAABCdLsf9HSfCv76cybEW0m4V1MnzaV3CcKndfUfskzDWw3ctko4um39pfHYU/wPQtGacU1uauuVjz0tjXMvHNLHKtgqFRO/i4Rl6cFqy9qZiJ3ekcHopz4JteKXyZuAASKqAAAAAAAAAAAARbSg/8At1T7Sl+ZMp+O9c0Wdpexurh6VFPbObm116kIte+SKzpQcpRjFXlrRjFdr2IjLeXXII6cKm+Mm+7YvRl55rJrA4VPY1h6F/8AYjaHXwVDwdOFNebCEP8AakjsEimTlqk5c2AACIAAAAAAAAAAAAAAAOtjsJGrSnRl5M4Spy5Si0/edkAJ2d0efspYOVGtUoz2Sg5QlzT39+x95NdFOXlGcsHPZGbc6Tfz0kmu9K65M7mlHNpzj8NpK8ox1a8Utrit0u7c+y3ArmlNwkmrxlFqSs7NSW1NMhuLzCVPM8HZuze/qkvTj2Ox6GBFMyc74YuCpVGo4mK2rdr286PbxXVyJUTKXXoVKE3TqKzRkAA8gAAAAAAcW7bWZuV9pEzwSi8Jh5Xk7xr1IvctqdOL4vc31c9w2MLhamKqKnDvfBLmyLZ95b+F4yUo7acPF0+DjF+V3u75WPpo8yV4fG021eNNqtPh0JLUXrt6mR6K1nZK8nsSSu78EXHmHm/8Ew3SXjqlp1OKVujDu297ZBK7LdmNaGCwfsob2tMfV/PrZJDJhGSZSQAAAAAAAAAAAAAAAAAAAADhKKas1dbmntVir8+syJUXLEYaLlRd3OEdsqb4pdcfdy3WmYaMNXNzBY2phKmuG7iuD/XDkeeYTcWnG8GtsXFtST6mmtxOc29JEoWp4tOpFbFVil4Vemm7S5rbzN1nNo+pV9aph2qFV3epa1GT5LyX2rZ2Fd5XyDiMLK1WnKK6pKLlB8pLZ+5Hai1RrYHM4KMt/J7JLsfHu8C5sl5cw+JV6NaFR/Nvq1Fzi9q9RsTzwpOL3uL6mtjNrhM6sZTVo4iaXCc3Nf8AtczqOfW6OO/8KfdJeqv5F5Ap+lpEx0d9SMvSpQ/awq6RMdLdUjH0aVN/3Go1f2Bir749t38rlwXNXlfOLDYZeNqxT+ji9aq/uraVBjM6MXVVp4ibT3rWcFbtUbGrcm9u18WNRtUOjjverPuin5v5Exzo0hVa6dLDp0aTupO/jmua8lctvaQ5K+zfwS33NpkPNnE4t+LpvU66krwpr7z38lcsrNXMijhLVJ+OrrdJq0IvjCPHte3kLNm/VxWDy2m6cFt5Le/xPh39y4Gq0f5l+C1cViY2qb6VKW+PCUl1PgurnunyBkkVLFYqpiajqVH8kuSAABrgAAAAAAAAAAAAAAAAAAAAAAAGLHCpTUk00pJ709qsfQAEdyjmPgq134LwTfXR8Xt428n2GhxeiynL+XiJR7JU4z9qcSwAYsjdpZli6StGo7de1eDuVjU0WVb9HEQa4uMov1bRT0WVb9LEQS4qMpP1bCzbGRZGx+28d9tflj8iA4PRZSX8zESqLrUacIe16xvsm5l4KhbVoqbW51bVO9LcvUSAGbI162Y4qrsnUdurYvBWOCjZbNi4HKxkA0gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//Z">
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="data:image/jpeg;base64,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""
+                    alt="" width=" 50">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+
+                    <!-- style button -->
+                    <style>
+                        .subscribe-form {
+                            --main-focus: #2d8cf0;
+                            --font-color: #FEFEFE;
+                            --font-color-sub: #666;
+                            --bg-color: #111;
+                            --main-color: #FEFEFE;
+                            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                            display: flex;
+                            flex-direction: row;
+                            width: 250px;
+                            height: 35px;
+                            border-radius: 5px;
+                            box-shadow: 4px 4px var(--main-color);
+                        }
+
+                        .subscribe-input {
+                            width: 100%;
+                            height: 100%;
+                            padding: 5px 10px;
+                            border: 2px solid var(--main-color);
+                            border-right: 0;
+                            border-radius: 5px 0 0 5px;
+                            font-size: 15px;
+                            font-weight: 500;
+                            color: var(--font-color);
+                            background: var(--bg-color);
+                        }
+
+                        .subscribe-btn {
+                            width: auto;
+                            height: 100%;
+                            border: 2px solid var(--main-focus);
+                            border-radius: 0 5px 5px 0;
+                            background-color: var(--main-focus);
+                            font-size: 15px;
+                            letter-spacing: 1px;
+                            font-weight: 500;
+                            color: var(--font-color);
+                            cursor: pointer;
+                        }
+
+                        .subscribe-input:focus {
+                            outline: none;
+                            border: 2px solid var(--main-focus);
+                            border-right: 0;
+                        }
+                    </style>
+                    <!-- end style button -->
+
+                    <form class="subscribe-form">
+                        <input class="subscribe-input" placeholder="Find Something..." type="email">
+                        <buttonheader class="subscribe-btn">Submit</buttonheader>
+                    </form>
+            </div>
+        </div>
+    </nav>
+    <!-- end navbar -->
+
+    <!-- banner -->
+    <style>
+        .banner {
+            height: 100vh;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://i.pinimg.com/564x/97/bd/f9/97bdf95e74d109f481af95d6d59ed21b.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .banner-content {
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+    </style>
+
+    <!-- style button -->
+
+    <!-- end style button -->
+
+    <style>
+        .card-kesehatan {
+            border-radius: 1rem;
+            background-color: rgba(31, 41, 55, 1);
+            padding: 1rem;
+        }
+
+        .infos {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            grid-gap: 1rem;
+            gap: 1rem;
+        }
+
+        .image {
+            height: 7rem;
+            width: 7rem;
+            border-radius: 0.5rem;
+            background-color: rgb(118, 36, 194);
+            background: linear-gradient(to bottom right, rgb(118, 36, 194), rgb(185, 128, 240));
+        }
+
+        .info {
+            height: 7rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .name {
+            font-size: 1.25rem;
+            line-height: 1.75rem;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 1);
+        }
+
+        .function {
+            font-size: 0.75rem;
+            line-height: 1rem;
+            color: rgba(156, 163, 175, 1);
+        }
+
+        .stats {
+            width: 100%;
+            border-radius: 0.5rem;
+            background-color: rgba(255, 255, 255, 1);
+            padding: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            line-height: 1rem;
+            color: rgba(0, 0, 0, 1);
+        }
+
+        .flex {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 4px;
+        }
+
+        .state-value {
+            font-weight: 700;
+            color: rgb(118, 36, 194);
+        }
+
+        .request {
+            margin-top: 1.5rem;
+            width: 100%;
+            border: 1px solid transparent;
+            border-radius: 0.5rem;
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            line-height: 1.5rem;
+            transition: all .3s ease;
+        }
+
+        .request:hover {
+            background-color: rgb(118, 36, 194);
+            color: #fff;
+        }
+    </style>
+
+    <style>
+        .card p {
+            font-size: 17px;
+            font-weight: 400;
+            line-height: 20px;
+            color: #666;
+        }
+
+        .card p.small {
+            font-size: 14px;
+        }
+
+        .go-corner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            width: 32px;
+            height: 32px;
+            overflow: hidden;
+            top: 0;
+            right: 0;
+            background-color: #00838d;
+            border-radius: 0 4px 0 32px;
+        }
+
+        .go-arrow {
+            margin-top: -4px;
+            margin-right: -4px;
+            color: white;
+            font-family: courier, sans;
+        }
+
+        .card1 {
+            display: block;
+            position: relative;
+            max-width: 262px;
+            background-color: #f2f8f9;
+            border-radius: 4px;
+            padding: 32px 24px;
+            margin: 12px;
+            text-decoration: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .card1:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: -16px;
+            right: -16px;
+            background: #00838d;
+            height: 32px;
+            width: 32px;
+            border-radius: 32px;
+            transform: scale(1);
+            transform-origin: 50% 50%;
+            transition: transform 0.25s ease-out;
+        }
+
+        .card1:hover:before {
+            transform: scale(21);
+        }
+
+        .card1:hover p {
+            transition: all 0.3s ease-out;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .card1:hover h3 {
+            transition: all 0.3s ease-out;
+            color: #fff;
+        }
+
+        .card2 {
+            display: block;
+            top: 0px;
+            position: relative;
+            max-width: 262px;
+            background-color: #f2f8f9;
+            border-radius: 4px;
+            padding: 32px 24px;
+            margin: 12px;
+            text-decoration: none;
+            z-index: 0;
+            overflow: hidden;
+            border: 1px solid #f2f8f9;
+        }
+
+        .card2:hover {
+            transition: all 0.2s ease-out;
+            box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
+            top: -4px;
+            border: 1px solid #ccc;
+            background-color: white;
+        }
+
+        .card2:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: -16px;
+            right: -16px;
+            background: #00838d;
+            height: 32px;
+            width: 32px;
+            border-radius: 32px;
+            transform: scale(2);
+            transform-origin: 50% 50%;
+            transition: transform 0.15s ease-out;
+        }
+
+        .card2:hover:before {
+            transform: scale(2.15);
+        }
+
+        .card3 {
+            display: block;
+            top: 0px;
+            position: relative;
+            max-width: 262px;
+            background-color: #f2f8f9;
+            border-radius: 4px;
+            padding: 32px 24px;
+            margin: 12px;
+            text-decoration: none;
+            overflow: hidden;
+            border: 1px solid #f2f8f9;
+        }
+
+        .card3 .go-corner {
+            opacity: 0.7;
+        }
+
+        .card3:hover {
+            border: 1px solid #00838d;
+            box-shadow: 0px 0px 999px 999px rgba(255, 255, 255, 0.5);
+            z-index: 500;
+        }
+
+        .card3:hover p {
+            color: #00838d;
+        }
+
+        .card3:hover .go-corner {
+            transition: opactiy 0.3s linear;
+            opacity: 1;
+        }
+
+        .card4 {
+            display: block;
+            top: 0px;
+            position: relative;
+            max-width: 262px;
+            background-color: #fff;
+            border-radius: 4px;
+            padding: 32px 24px;
+            margin: 12px;
+            text-decoration: none;
+            overflow: hidden;
+            border: 1px solid #ccc;
+        }
+
+        .card4 .go-corner {
+            background-color: #00838d;
+            height: 100%;
+            width: 16px;
+            padding-right: 9px;
+            border-radius: 0;
+            transform: skew(6deg);
+            margin-right: -36px;
+            align-items: start;
+            background-image: linear-gradient(-45deg, #8f479a 1%, #dc2a74 100%);
+        }
+
+        .card4 .go-arrow {
+            transform: skew(-6deg);
+            margin-left: -2px;
+            margin-top: 9px;
+            opacity: 0;
+        }
+
+        .card4:hover {
+            border: 1px solid #cd3d73;
+        }
+
+        .card4 h3 {
+            margin-top: 8px;
+        }
+
+        .card4:hover .go-corner {
+            margin-right: -12px;
+        }
+
+        .card4:hover .go-arrow {
+            opacity: 1;
+        }
+    </style>
+
+
+    <div class="container-fluid gx-0">
+        <div class="banner">
+            <div class="banner-content text-light">
+                <h1>Solusi Kesehatan Terlengkap</h1>
+                <p>Chat dokter, kunjungi rumah sakit, beli obat, cek lab dan update informasi seputar kesehatan, semua
+                    bisa di Halodoc!
+                </p>
+                <div class="container">
+                    <div class="container mt-3">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-2 mb-2 d-flex justify-content-center">
+                                <div class="card-kesehatan">
+                                    <div class="infos">
+                                        <div class="image">
+                                            <img src="https://i.pinimg.com/236x/06/b1/85/06b185e5b2322f1ab0557db59b554cd5.jpg"
+                                                alt="" width="115">
+                                        </div>
+                                        <div class="info">
+                                            <div>
+                                                <p class="name">
+                                                    Chat dengan Dokter
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="https://www.halodoc.com/tanya-dokter"><button class="request"
+                                            type="button">
+                                            Chat
+                                        </button></a>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-4 col-sm-2 mb-2 d-flex justify-content-center">
+                                <div class="card-kesehatan">
+                                    <div class="infos">
+                                        <div class="image">
+                                            <img src="https://i.pinimg.com/564x/32/47/eb/3247eba14cadb3a7475b8e7edd2e0755.jpg"
+                                                alt="" width="115">
+                                        </div>
+                                        <div class="info">
+                                            <div>
+                                                <p class="name">
+                                                    Toko kesehatan
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="https://www.halodoc.com/obat-dan-vitamin"><button class="request"
+                                            type="button">
+                                            Beli
+                                        </button></a>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-4 col-sm-2 mb-2 d-flex justify-content-center">
+                                <div class="card-kesehatan">
+                                    <div class="infos">
+                                        <div class="image">
+                                            <img src="https://i.pinimg.com/564x/ba/1c/17/ba1c178241ba700805758d558e1cab23.jpg"
+                                                alt="" width="115">
+                                        </div>
+                                        <div class="info">
+                                            <div>
+                                                <p class="name">
+                                                    Buat janji dengan RS
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="https://www.halodoc.com/rumah-sakit"><button class="request" type="button">
+                                            Chat
+                                        </button></a>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-4 col-sm-2 mb-2 d-flex justify-content-center">
+                                <div class="card-kesehatan">
+                                    <div class="infos">
+                                        <div class="image">
+                                            <img src="https://i.pinimg.com/236x/b3/c5/31/b3c531d4200c6bbe1fef141a2748b508.jpg"
+                                                alt="" width="115">
+                                        </div>
+                                        <div class="info">
+                                            <div>
+                                                <p class="name">
+                                                    Janji medis
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="https://www.halodoc.com/janji-medis"><button class="request" type="button">
+                                            Chat
+                                        </button></a>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-4 col-sm-2 mb-2 d-flex justify-content-center">
+                                <div class="card-kesehatan">
+                                    <div class="infos">
+                                        <div class="image">
+                                            <img src="https://i.pinimg.com/736x/9d/98/12/9d9812d90baed4cb843e9017b2ddcc89.jpg"
+                                                alt="" width="115">
+                                        </div>
+                                        <div class="info">
+                                            <div>
+                                                <p class="name">
+                                                    Home lab & Vaksinasi
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="https://www.halodoc.com/homelab/packages"><button class="request"
+                                            type="button">
+                                            Chat
+                                        </button></a>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-4 col sm-2 mb-2 d-flex justify-content-center">
+                                <div class="card-kesehatan">
+                                    <a class="card1" href="#">
+                                        <p>Sambungkan Asuransimu</p>
+                                        <p class="small">Dapatkan manfaat asuransi secara langsung untuk layangan
+                                            Halodoc.
+                                        </p>
+                                        <div class="go-corner" href="#">
+                                            <div class="go-arrow">
+                                                →
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <h1>Layanan Khusus</h1>
+        <br>
+        <div class="row">
+            <div class="col-md-2 d-flex justify-content-center text-center">
+                <div class="">
+                    <a href="https://www.halodoc.com/tanya-dokter/kategori/bidanku-1"><img
+                            src="https://i.pinimg.com/564x/26/46/c7/2646c76ac59a4fc72d21fb5ab7042ddc.jpg"
+                            class="rounded-circle w-50 bg-dark" alt="" style="border-radius: 50%;"></a>
+                    <p class="fs-6">Layanan Bidan</p>
+                </div>
+            </div>
+            <div class="col-md-2 d-flex justify-content-center text-center">
+                <div class="">
+                    <a href="https://www.halodoc.com/diabetic-care-id/"><img
+                            src="https://i.pinimg.com/564x/b0/e7/af/b0e7afc1da03f17c38701412379c9f6c.jpg"
+                            class="rounded-circle w-50 bg-dark" alt="" style="border-radius: 50%;"></a>
+                    <p class="fs-6">Perawatan Diabetes</p>
+                </div>
+            </div>
+            <div class="col-md-2 d-flex justify-content-center text-center">
+                <div class="">
+                    <a href="https://www.halodoc.com/kesehatan-jantung/"><img
+                            src="https://i.pinimg.com/736x/d6/9c/fe/d69cfea751548e78013f2d723987ab37.jpg"
+                            class="rounded-circle w-50 bg-dark" alt="" style="border-radius: 50%;"></a>
+                    <p class="fs-6">Kesehatan Jantung</p>
+                </div>
+            </div>
+            <div class="col-md-2 d-flex justify-content-center text-center">
+                <div class="">
+                    <a href="https://health.halodoc.com/skin-health-id/"><img
+                            src="https://i.pinimg.com/564x/cc/d4/72/ccd472dc293662128258c8f7b8b08c52.jpg"
+                            class="rounded-circle w-50 bg-dark" alt="" style="border-radius: 50%;"></a>
+                    <p class="fs-6">Kesehatan Kulit</p>
+                </div>
+            </div>
+            <div class="col-md-2 d-flex justify-content-center text-center">
+                <div class="">
+                    <a href="https://health.halodoc.com/sexual-health-id/"><img
+                            src="https://i.pinimg.com/564x/e4/be/cd/e4becda3b5d18dc7b653a86cffdcc4a0.jpg"
+                            class="rounded-circle w-50 bg-dark" alt="" style="border-radius: 50%;"></a>
+                    <p class="fs-6">Kesehatan Sexual</p>
+                </div>
+            </div>
+            <div class="col-md-2 d-flex justify-content-center text-center">
+                <div class="">
+                    <a href="https://www.halodoc.com/kesehatan-mental"><img
+                            src="https://i.pinimg.com/736x/92/f6/22/92f6224fe2eb1c4aa6c4cc82dc92e49e.jpg"
+                            class="rounded-circle w-50 bg-dark" alt="" style="border-radius: 50%;"></a>
+                    <p class="fs-6">Kesehatan Mental</p>
+                </div>
+            </div>
+            <div class="col-md-2 d-flex justify-content-center text-center">
+                <div class="">
+                    <a href="https://www.halodoc.com/tanya-dokter/kategori/dokter-hewan"><img
+                            src="https://i.pinimg.com/564x/7d/70/23/7d7023abf8b6ec1f97fc980447c7f232.jpg"
+                            class="rounded-circle w-50 bg-dark" alt="" style="border-radius: 50%;"></a>
+                    <p class="fs-6">Kesehatan Hewan</p>
+                </div>
+            </div>
+            <div class="col-md-2 d-flex justify-content-center text-center">
+                <div class="">
+                    <a href="https://www.halodoc.com/parent-homepage-id/"><img
+                            src="https://i.pinimg.com/236x/bb/ca/39/bbca391cd114c1dd3d8ca0aed7e83f5a.jpg"
+                            class="rounded-circle w-50 bg-dark" alt="" style="border-radius: 50%;"></a>
+                    <p class="fs-6">Parenting</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="container">
+        <h1>Penunjang Kesehatan</h1>
+        <br>
+        <div class="row">
+            <div class="col-md-2 d-flex justify-content-center text-center">
+                <div class="">
+                    <a href="https://www.halodoc.com/stress-checker/"><img
+                            src="https://i.pinimg.com/736x/a6/35/ad/a635ad74b04c7f29bb8e52465be2a042.jpg"
+                            class="rounded-circle w-50 bg-dark" alt="" style="border-radius: 50%;"></a>
+                    <p class="fs-6">Cek Stress</p>
+                </div>
+            </div>
+            <div class="col-md-2 d-flex justify-content-center text-center">
+                <div class="">
+                    <a href="https://www.halodoc.com/artikel/kalender-menstruasi-di-aplikasi-halodoc"><img
+                            src="https://i.pinimg.com/236x/50/ea/3d/50ea3d0bc0cdc8e171d4402639bf7760.jpg"
+                            class="rounded-circle w-50 bg-dark" alt="" style="border-radius: 50%;"></a>
+                    <p class="fs-6">Kalender Menstruasi</p>
+                </div>
+            </div>
+            <div class="col-md-2 d-flex justify-content-center text-center">
+                <div class="">
+                    <a href="https://www.halodoc.com/bmi-calculator/"><img
+                            src="https://i.pinimg.com/564x/5e/e9/62/5ee9620240f9cb60334cf1d199184639.jpg"
+                            class="rounded-circle w-50 bg-dark" alt="" style="border-radius: 50%;"></a>
+                    <p class="fs-6">Kalkulator BMI</p>
+                </div>
+            </div>
+            <div class="col-md-2 d-flex justify-content-center text-center">
+                <div class="https://www.halodoc.com/heart-risk-calculator/">
+                    <a href="https://www.halodoc.com/artikel/kalender-kehamilan-di-aplikasi-halodoc"><img
+                            src="https://i.pinimg.com/236x/9a/1d/6c/9a1d6c260a720797b4186fa546829a4e.jpg"
+                            class="rounded-circle w-50 bg-dark" alt="" style="border-radius: 50%;"></a>
+                    <p class="fs-6">Kalender Kehamilan</p>
+                </div>
+            </div>
+            <div class="col-md-2 d-flex justify-content-center text-center">
+                <div class="">
+                    <a href="https://www.halodoc.com/heart-risk-calculator/"><img
+                            src="https://i.pinimg.com/236x/1a/9f/f0/1a9ff052f611da6a8fc2016cbcd7bd54.jpg"
+                            class="rounded-circle w-50 bg-dark" alt="" style="border-radius: 50%;"></a>
+                    <p class="fs-6">Resiko Jantung</p>
+                </div>
+            </div>
+            <div class="col-md-2 d-flex justify-content-center text-center">
+                <div class="">
+                    <a href="https://www.halodoc.com/diabetes-risk-calculator/"><img
+                            src="https://i.pinimg.com/564x/e7/73/73/e77373c6a970372f7897b8830625a131.jpg"
+                            class="rounded-circle w-50 bg-dark" alt="" style="border-radius: 50%;"></a>
+                    <p class="fs-6">Resiko Diabetes</p>
+                </div>
+            </div>
+            <div class="col-md-2 d-flex justify-content-center text-center">
+                <div class="">
+                    <a href="https://www.halodoc.com/artikel/pengingat-obat-di-aplikasi-halodoc"><img
+                            src="https://i.pinimg.com/564x/0b/e3/10/0be310d2f9b198d3bb3f48e420eaaf4d.jpg"
+                            class="rounded-circle w-50 bg-dark" alt="" style="border-radius: 50%;"></a>
+                    <p class="fs-6">Pengingat Obat</p>
+                </div>
+            </div>
+            <div class="col-md-2 d-flex justify-content-center text-center">
+                <div class="">
+                    <a href="https://halodoc.kitabisa.com/"><img
+                            src="https://i.pinimg.com/564x/87/a3/0d/87a30d7e92b1accf2375364f45478639.jpg"
+                            class="rounded-circle w-50 bg-dark" alt="" style="border-radius: 50%;"></a>
+                    <p class="fs-6">Donasi</p>
+                </div>
+            </div>
+            <div class="col-md-2 d-flex justify-content-center text-center">
+                <div class="">
+                    <a href="https://www.halodoc.com/depression-test/home"><img
+                            src="https://i.pinimg.com/236x/9b/25/8d/9b258df099563312a84cf3e8ba1d7c9c.jpg"
+                            class="rounded-circle w-50 bg-dark" alt="" style="border-radius: 50%;"></a>
+                    <p class="fs-6">Tes Depresi</p>
+                </div>
+            </div>
+            <div class="col-md-2 d-flex justify-content-center text-center">
+                <div class="">
+                    <a href="https://www.halodoc.com/anxiety-test/"><img
+                            src="https://i.pinimg.com/736x/ed/39/e3/ed39e31bc649a08cacd4c1fdcf275ee3.jpg"
+                            class="rounded-circle w-50 bg-dark" alt="" style="border-radius: 50%;"></a>
+                    <p class="fs-6">Tes Gangguan Kecemasan</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- end banner -->
+
+    <!-- footer -->
+    <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <p class="col-md-4 mb-0 text-body-secondary">&copy; HALODOC, 2024. ALL RIGHTS RESERVED</p>
+
+            <a href="/"
+                class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                <svg class="bi me-2" width="40" height="32">
+                    <use xlink:href="#bootstrap" /></svg>
+            </a>
+
+            <ul class="nav col-md-4 justify-content-end">
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Features</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Pricing</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
+            </ul>
+        </footer>
+    </div>
+    <!-- end footer -->
+
+    <script src="js/bootstrap.bundle.js"></script>
+</body>
+
+</html>
